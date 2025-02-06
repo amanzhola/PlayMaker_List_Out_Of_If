@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.playmaker_list_out_of_if"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.playmaker_list_out_of_if"

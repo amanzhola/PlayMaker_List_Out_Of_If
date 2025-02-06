@@ -10,8 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PlayMaker_List_Out_Of_If"
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
         tools:targetApi="31">
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MediaLibraryActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,6 +30,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".SettingsActivityC"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivityC"
+            android:exported="false" />
+        <activity
+            android:name=".MediaLibraryActivityC"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityC"
+            android:exported="true"/>
+
+        <activity
+            android:name=".SettingsActivityA"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivityA"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityA"
+            android:exported="true"/>
     </application>
+
+    <queries>
+        <package android:name="com.google.android.gm" />
+        <package android:name="com.android.email" />
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent>
+    </queries>
 
 </manifest>
