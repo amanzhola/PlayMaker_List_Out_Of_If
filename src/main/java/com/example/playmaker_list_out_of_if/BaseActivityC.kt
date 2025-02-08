@@ -1,6 +1,7 @@
 package com.example.playmaker_list_out_of_if
 
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -21,7 +22,13 @@ open class BaseActivityC : AppCompatActivity() {
     protected fun setupToolbar(toolbarId: Int) {
         toolbar = findViewById(toolbarId)
         setSupportActionBar(toolbar)
+        toolbar.contentInsetStartWithNavigation = dipToPx(8)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    private fun dipToPx(dp: Int): Int {
+        val displayMetrics = resources.displayMetrics
+        return dp * (displayMetrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

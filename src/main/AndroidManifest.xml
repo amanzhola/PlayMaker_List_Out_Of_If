@@ -32,6 +32,19 @@
         </activity>
 
         <activity
+            android:name=".SettingsActivityB"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivityB"
+            android:exported="false" />
+        <activity
+            android:name=".MediaLibraryActivityB"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityB"
+            android:exported="true"/>
+
+        <activity
             android:name=".SettingsActivityC"
             android:exported="false" />
         <activity

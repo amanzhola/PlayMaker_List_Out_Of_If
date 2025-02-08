@@ -67,6 +67,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:fontFamily">@font/ys_display_medium</item>
         <item name="android:textFontWeight">500</item>
+        <item name="android:layout_marginEnd">@dimen/Button_margin_16</item>
 
     </style>
 
@@ -78,6 +79,7 @@
         <item name="android:fontFamily">@font/ys_display_medium</item>
         <item name="android:textFontWeight">500</item>
         <item name="navigationIcon">@drawable/arrow_back_1</item>
+        <item name="android:layout_marginEnd">@dimen/Button_margin_16</item>
     </style>
 
     <style name="SearchTitleTextView1">

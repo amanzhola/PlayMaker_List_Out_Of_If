@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    style="@style/MainView">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/MainTitleTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/Button_Big1"
+        style="@style/MainMaterialButtonStyle"
+        android:text="@string/search"
+        app:icon="@drawable/magnifier"/>
+
+    <Button
+        android:id="@+id/Button_Big2"
+        style="@style/MainMaterialButtonStyle"
+        android:text="@string/media"
+        app:icon="@drawable/media_icon"/>
+
+    <Button
+        android:id="@+id/Button_Big3"
+        style="@style/MainMaterialButtonStyle"
+        android:text="@string/list0"
+        app:icon="@drawable/settings_icon"/>
+
+
+</LinearLayout>
