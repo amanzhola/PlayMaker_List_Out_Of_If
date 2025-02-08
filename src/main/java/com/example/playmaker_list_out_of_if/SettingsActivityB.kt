@@ -143,7 +143,7 @@ class SettingsActivityB : AppCompatActivity() {
     }
 
     private fun makePhoneCall() {
-        val phoneNumber = "tel:+77012069433"
+        val phoneNumber = "tel:+7000000"
         val callIntent = Intent(Intent.ACTION_DIAL).apply {
             data = Uri.parse(phoneNumber)
         }
