@@ -94,6 +94,4 @@ open class BaseActivityC : AppCompatActivity() {
             .create()
         filterListDialog.show()
     }
-
-
 }
