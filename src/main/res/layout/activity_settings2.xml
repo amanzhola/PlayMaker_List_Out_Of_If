@@ -51,4 +51,28 @@
         android:text="@string/list4"
         app:drawableEndCompat="@drawable/vector"/>
 
+    <TextView
+        android:id="@+id/phone"
+        style="@style/SettingsTextView"
+        android:text="@string/list5"
+        app:drawableEndCompat="@drawable/phone"/>
+
+    <TextView
+        android:id="@+id/sms"
+        style="@style/SettingsTextView"
+        android:text="@string/sms"
+        app:drawableEndCompat="@drawable/text_sms"/>
+
+    <TextView
+        android:id="@+id/textColor"
+        style="@style/SettingsTextView"
+        android:text="@string/set_textColor"
+        app:drawableEndCompat="@drawable/text_color_change"/>
+
+    <TextView
+        android:id="@+id/backgroundColor"
+        style="@style/SettingsTextView"
+        android:text="@string/backgroundColor"
+        app:drawableEndCompat="@drawable/background_color_fill"/>
+
 </LinearLayout>

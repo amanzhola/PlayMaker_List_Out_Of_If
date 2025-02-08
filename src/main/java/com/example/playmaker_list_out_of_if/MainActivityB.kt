@@ -26,6 +26,7 @@ class MainActivityB : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         mainLayout = findViewById(R.id.activity_main)
+//        mainLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.red));
 
         settingsLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {}
 
