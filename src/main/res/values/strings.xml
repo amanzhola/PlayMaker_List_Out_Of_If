@@ -33,6 +33,7 @@
     <string name="sms">Отправить смс</string>
     <string name="set_textColor">Cменить цвет текста</string>
     <string name="backgroundColor">Сменить цвет фона</string>
+    <string name="iconColor">Сменить цвет иконки</string>
 
 
 </resources>

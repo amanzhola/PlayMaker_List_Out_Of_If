@@ -21,6 +21,7 @@
     <color name="magenta">#FF00FF</color> <!-- Магента -->
     <color name="orange">#FFA500</color> <!-- Оранжевый -->
     <color name="purple">#800080</color> <!-- Пурпурный -->
+    <color name="gray1">#AEAFB4</color> <!-- Серый1 -->
 
 
     <color name="purple_200">#FFBB86FC</color>

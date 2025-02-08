@@ -40,7 +40,8 @@ class SettingsActivityB : AppCompatActivity() {
         Color.YELLOW,
         Color.CYAN,
         Color.MAGENTA,
-        Color.BLACK
+        Color.BLACK,
+        Color.GRAY
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,8 +98,9 @@ class SettingsActivityB : AppCompatActivity() {
         setupViewClickListener<TextView>(R.id.title) { if (isDarkTheme) finish() }
         setupViewClickListener<TextView>(R.id.phone) { makePhoneCall()}
         setupViewClickListener<TextView>(R.id.sms) { sendSms() }
-        setupViewClickListener<TextView>(R.id.textColor) { changeColor(true) }
-        setupViewClickListener<TextView>(R.id.backgroundColor) { changeColor(false) }
+        intArrayOf(R.id.textColor, R.id.backgroundColor, R.id.iconColor).forEach {
+            setupViewClickListener<TextView>(it) { changeColor(it) }
+        }
     }
 
     private fun <T : View> setupViewClickListener(viewId: Int, action: () -> Unit) {
@@ -172,22 +174,39 @@ class SettingsActivityB : AppCompatActivity() {
         }
     }
 
-    private fun changeColor(isTextColor: Boolean){
+    private fun changeColor(viewId: Int){
         val randomColor = colors[Random.nextInt(colors.size)]
-        if (isTextColor) {
-            settingsLayout.changeTextColor(randomColor)
-            backButton.imageTintList = ColorStateList.valueOf(randomColor)
-        } else {
-            settingsLayout.setBackgroundColor(randomColor)
+        when (viewId){
+            R.id.textColor -> {
+                settingsLayout.changeColorView(randomColor, true)
+                backButton.imageTintList = ColorStateList.valueOf(randomColor)
+            }
+            R.id.backgroundColor -> {
+                settingsLayout.setBackgroundColor(randomColor)
+            }
+            R.id.iconColor -> {
+                settingsLayout.changeColorView(randomColor, false)
+            }
         }
     }
 
-    private fun ViewGroup.changeTextColor(textColor:Int){
+    private fun ViewGroup.changeColorView(color: Int, isTextColor: Boolean) {
         children.forEach { view: View ->
-            if (view is TextView ){
-                view.run { setTextColor(textColor) }
-            } else if (view is ViewGroup) {
-                view.run { changeTextColor(textColor) }
+            when {
+                view is TextView -> {
+                    if (isTextColor) {
+                        view.setTextColor(color)
+                    } else {
+                        val drawable = view.compoundDrawablesRelative[2]
+                        drawable?.let {
+                            it.setTint(color)
+                            view.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, it, null)
+                        }
+                    }
+                }
+                view is ViewGroup -> {
+                    view.changeColorView(color, isTextColor)
+                }
             }
         }
     }
